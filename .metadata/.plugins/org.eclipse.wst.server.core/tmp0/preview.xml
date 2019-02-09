@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="june30" name="june30" path="D:/PROJECT/My_4TH_SEM_PROJECT/bagsandbags/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/june30" type="j2ee"/>
+</server>

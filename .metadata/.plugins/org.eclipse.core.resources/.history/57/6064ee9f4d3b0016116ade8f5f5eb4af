@@ -1,0 +1,90 @@
+package sis.com.dao.impl;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import sis.com.bo.Employee;
+import sis.com.dao.EmployeeDao;
+import sis.com.util.DBConnectionUtil;
+
+public class EmployeeDaoOracle implements EmployeeDao{
+
+	public void add(Employee e) {
+		System.out.println("orale employee added");
+	}
+
+	public boolean delete(String empId) {
+		
+		
+		return false;
+	}
+
+	public Employee getEmployee(String empId) {
+		
+		Connection con  =null;
+		
+		try {
+			con = DBConnectionUtil.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public List<Employee> getAllEmployee() {
+		List<Employee> empList  = new ArrayList<Employee>();
+		
+		Connection con  = null;
+		try {
+			con = DBConnectionUtil.getConnection();
+			
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from  employee");
+			while(rs.next()){
+				Employee e  =  new Employee();
+			    e.setEmpID(rs.getString("EMPLOYEE_ID"));
+			    e.setName(rs.getString("NAME"));
+			    e.setEmail(rs.getString("EMAIL"));
+			    e.setSalary(rs.getFloat("SALARY"));
+			    empList.add(e);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			/*if(con!=null){
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}*/
+			
+			try {
+				DBConnectionUtil.closeConnection(con);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+		}
+		
+		return empList;
+	}
+
+	@Override
+	public List<Employee> getAllEmployeeByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

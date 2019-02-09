@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+D:\PROJECT\My_4TH_SEM_PROJECT\bagsandbags\.metadata\.plugins\org.eclipse.jdt.core
+2814882300.index
+2786313049.index
