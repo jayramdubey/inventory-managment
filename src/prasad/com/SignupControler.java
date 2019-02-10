@@ -19,18 +19,16 @@ public class SignupControler extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		//get parameters send by user
-		
+		//changed by jay dubey
 		
 		String userID = req.getParameter("userId");
 		String userName = req.getParameter("userName");
 		String userPassword = req.getParameter("upass");
 		String userType = req.getParameter("user_type");
-		//sushil Dangi 
+		
 		
 		//perform jdbc task 
-		 
-		//jay dubey
-		
+
 		long newid=getMaxId();
 		Connection con  = null;
 		PreparedStatement  stmt = null;
