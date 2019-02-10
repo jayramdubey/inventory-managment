@@ -25,10 +25,11 @@ public class SignupControler extends HttpServlet{
 		String userName = req.getParameter("userName");
 		String userPassword = req.getParameter("upass");
 		String userType = req.getParameter("user_type");
+		//sushil Dangi 
 		
 		//perform jdbc task 
 		 
-		
+		//jay dubey
 		
 		long newid=getMaxId();
 		Connection con  = null;
